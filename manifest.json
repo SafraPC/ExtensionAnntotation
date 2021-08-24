@@ -1,0 +1,37 @@
+{
+    "manifest_version": 2,
+    "name":"modalAnnotation",
+    "version": "1",
+    "description": "Extension for create an modal for annotations",
+    "icons": {
+      "512": "/assets/icon.png"
+    },
+    "permissions": [
+      "activeTab",
+      "https://*/*",
+      "https://*/*",
+      "storage",
+      "notifications"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://*/*","http://*/*"],
+        "js": [
+          "/js/index.js"
+        ],
+        "css": [
+          "/css/style.css"
+        ]
+      }
+    ],
+ 
+    "web_accessible_resources": [
+      "/css/style.css","/assets/logo.png"
+    ],
+    
+    "browser_action": {
+      "default_icon": "/assets/icon.png",
+      "default_title": "modalAnnotation"
+    }
+  }
+  

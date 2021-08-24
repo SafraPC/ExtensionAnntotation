@@ -1,0 +1,25 @@
+.safraExtensionButton {
+  height: 85px;
+  width: 85px;
+  position: fixed;
+  float: left;
+  background-color: #a5f3f3;
+  border-radius: 10rem;
+  z-index: 1000000;
+  margin-left: 1rem;
+  bottom: 0;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: margin-bottom 0.3s ease;
+}
+.safraExtensionButton span {
+  color: black;
+  font-size: 15px;
+}
+.safraExtensionButton:hover {
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "extensionanntotation",
+  "version": "1.0.0",
+  "description": "I will create this project for help a friend, the app is a google extension and will open a model for anotation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SafraPC/ExtensionAnntotation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SafraPC/ExtensionAnntotation/issues"
+  },
+  "homepage": "https://github.com/SafraPC/ExtensionAnntotation#readme"
+}
