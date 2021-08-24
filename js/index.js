@@ -16,18 +16,18 @@ const createButton = () => {
 
 const createModal = () => {
   const modal = document.createElement("div");
-  modal.classList.add("modal");
-  modal.id = "modal";
+  modal.classList.add("safraModal");
+  modal.id = "safraModal";
   const modalMain = document.createElement("div");
-  modalMain.classList.add("modalMain");
+  modalMain.classList.add("safraModalMain");
   const modalHeader = document.createElement("div");
-  modalHeader.classList.add("modalHeader");
+  modalHeader.classList.add("safraModalHeader");
   const modalItem = document.createElement("div");
-  modalItem.classList.add("modalItem");
+  modalItem.classList.add("safraModalItem");
   const modalBody = document.createElement("div");
-  modalBody.classList.add("modalBody");
+  modalBody.classList.add("safraModalBody");
   const modalFooter = document.createElement("div");
-  modalFooter.classList.add("modalFooter");
+  modalFooter.classList.add("safraModalFooter");
 
   //add items
   modalMain.appendChild(modalHeader);
@@ -42,7 +42,7 @@ const createModal = () => {
   const openModal = () => {
     modalMain.style.transform = "scaleY(1)";
     modal.style.transform = "scaleY(1)";
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden !important";
   };
 
   const closeModal = () => {
@@ -63,7 +63,7 @@ const createModal = () => {
   //   modalNiceButton.onclick = () => closeModal();
 
   modal.onclick = (e) => {
-    if (e.target.id === "modal") {
+    if (e.target.id === "safraModal") {
       closeModal();
     }
   };
