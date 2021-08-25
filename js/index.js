@@ -18,6 +18,7 @@ const createButton = () => {
 };
 
 const createModal = () => {
+  //principal modal elements
   const modal = document.createElement("div");
   modal.classList.add("safraModal");
   modal.id = "safraModal";
@@ -25,42 +26,65 @@ const createModal = () => {
   modalMain.classList.add("safraModalMain");
   const modalHeader = document.createElement("div");
   modalHeader.classList.add("safraModalHeader");
-  const modalItem = document.createElement("div");
-  modalItem.classList.add("safraModalItem");
   const modalBody = document.createElement("div");
   modalBody.classList.add("safraModalBody");
   const modalFooter = document.createElement("div");
   modalFooter.classList.add("safraModalFooter");
 
+  //Items
+  const modalItemHeader = document.createElement("div");
+  modalItemHeader.classList.add("safraModalItem");
+  const modalClose = document.createElement("button");
+  modalClose.classList.add("safraModalClose");
+  modalClose.innerText = "X";
+
+  const modalItemBody = document.createElement("div");
+  modalItemBody.classList.add("safraModalItem");
+
+  const modalItemFooter = document.createElement("div");
+  modalItemFooter.classList.add("safraModalItem");
+
   //add items
+  //put principal elements in header
   modalMain.appendChild(modalHeader);
   modalMain.appendChild(modalBody);
   modalMain.appendChild(modalFooter);
-  modalHeader.appendChild(modalItem);
-  modalBody.appendChild(modalItem);
-  modalFooter.appendChild(modalItem);
+
+  //header especifications
+  modalHeader.appendChild(modalItemHeader);
+  modalItemHeader.appendChild(modalClose);
+
+  //body especifications
+  modalBody.appendChild(modalItemBody);
+  modalFooter.appendChild(modalItemFooter);
+
+  //create modal
   modal.appendChild(modalMain);
+
   document.children[0].insertBefore(modal, document.children[0].children[1]);
+
   const openModal = () => {
-    modalMain.style.transform = "scaleY(1)";
-    modal.style.transform = "scaleY(1)";
-    document.body.style.overflow = "hidden !important";
+    if (modalMain.style.transform !== "scaleY(1)") {
+      modalMain.style.transform = "scaleY(1)";
+      modal.style.transform = "scaleY(1)";
+      document.body.style.overflow = "hidden !important";
+    }
   };
 
   const closeModal = () => {
-    modalMain.style.transform = "scaleY(0)";
-    modal.style.transform = "scaleY(0)";
-    document.body.style.overflow = "auto";
+    if (modalMain.style.transform !== "scaleY(0)") {
+      modalMain.style.transform = "scaleY(0)";
+      modal.style.transform = "scaleY(0)";
+      document.body.style.overflow = "auto";
+    }
   };
 
   const extensionButton = document.getElementsByClassName(
     "safraExtensionButton"
   );
-  console.log(extensionButton);
   extensionButton[0].onclick = () => openModal();
-  //   modalButton.onclick = () => openModal();
 
-  //   closeButton.onclick = () => closeModal();
+  modalClose.onclick = () => closeModal();
 
   //   modalNiceButton.onclick = () => closeModal();
 
