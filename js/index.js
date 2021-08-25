@@ -11,7 +11,10 @@ const createButton = () => {
   principalButton.classList.add("safraExtensionButton");
   principalButton.appendChild(buttonText);
   //put principal button element in screen
-  document.body.insertBefore(principalButton, document.body.firstChild);
+  document.children[0].insertBefore(
+    principalButton,
+    document.children[0].children[1]
+  );
 };
 
 const createModal = () => {
@@ -37,8 +40,7 @@ const createModal = () => {
   modalBody.appendChild(modalItem);
   modalFooter.appendChild(modalItem);
   modal.appendChild(modalMain);
-  document.body.insertBefore(modal, document.body.firstChild);
-
+  document.children[0].insertBefore(modal, document.children[0].children[1]);
   const openModal = () => {
     modalMain.style.transform = "scaleY(1)";
     modal.style.transform = "scaleY(1)";
@@ -67,34 +69,6 @@ const createModal = () => {
       closeModal();
     }
   };
-  /*
-  <div class="modal" id="modal">
-      <div class="modalMain" id="modalMain">
-        <div class="modalHeader">
-          <div class="modalItem">
-            <h2>Modal title</h2>
-          </div>
-          <button class="modalClose" id="closeButton">X</button>
-        </div>
-        <div class="modalBody">
-          <div class="modalItem">
-            <h3>Modal body</h3>
-          </div>
-        </div>
-        <div class="modalFooter">
-          <div class="modalItem" style="align-items: center">
-            <button
-              class="button"
-              id="modalNiceButton"
-              style="margin-top: 0; margin-left: auto"
-            >
-              Nice!
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-*/
 };
 
 start();
